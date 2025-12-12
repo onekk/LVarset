@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>553</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>553</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QListWidget {
+	background-color: rgb(211, 211, 211) ;/*   */
+	margin:0px;
+	color: black;
+	font-weight: bold;
+}
+
+QListWidget::item {
+	padding: 0px;      spazio interno di ogni elemento */
+}
+
+QListWidget::item:hover {
+    background-color: rgb(200, 200, 200) ; 
+	color: black;
+}  
+
+QListWidget::item:selected {
+    background-color:  rgb(230, 230, 230) ; 
+	color: black;
+}  
+
+QListWidget::indicator {
+    width: 12px;
+    height: 10px;
+    border: 1px solid black;
+    background: white;
+    margin: 0px;
+}
+
+QListWidget::indicator:checked {
+    background: black;
+}
+
+
+QComboBox {
+   background-color: rgb(170, 170, 170) ;
+    font: 11pt &quot;Times New Roman&quot;;
+    color: black;
+	font-weight: bold;
+    padding: 0px;
+	border-radius: 4px;
+	text-align: center; 
+}
+QComboBox::item {
+	text-align: center; 
+	color: black;
+}
+
+
+QComboBox QAbstractItemView {
+    background-color: rgb(185, 185, 185) ;  /* arancio  */
+    color: black ;                          /* testo nero */
+    border: 1px solid rgb(162, 128, 102);  
+    selection-background-color: rgb(168, 168, 168) ;
+    selection-color:  black ;        
+}
+
+QPushButton {
+	font: 10pt &quot;Times New Roman&quot;;
+	background-color: rgb(141, 141, 141) ; /* luce (alto/sinistra) */
+	border-top: 2px solid  #ffcaa1  ;          /* luce (alto/sinistra) */
+	border-left: 2px solid #ffcaa1 ;
+	border-right: 2px solid #554336  ;        /* ombra (basso/destra) */
+	border-bottom: 2px solid #554336  ;
+	border-radius: 4px;
+	padding :4px;
+	color: black;
+	font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color:rgb(106, 106, 106) ;      /*        leggermente più scuro */
+}
+
+QPushButton:pressed {
+    background-color: rgb(54, 54, 54); /*#c0c0c0;              più scuro */
+    border-top: 2px solid #707070;          /* inverti luce/ombra */
+    border-left: 2px solid #707070;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-top: 5px;                       /* piccolo spostamento “affossato” */
+    padding-left: 5px;
+}
+
+QLabel  {
+	font: 10pt &quot;Times New Roman&quot;;
+	font-weight: bold;
+	background-color: rgb(211, 211, 211) ;
+	margin:0px;
+	color: black ;
+	qproperty-alignment: 'AlignCenter';
+}
+
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+     </property>
+     <item>
+      <widget class="QLabel" name="OBjectsLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Objects</string>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignmentFlag::AlignVCenter">
+      <widget class="QComboBox" name="ObjCombo">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <property name="currentIndex">
+        <number>-1</number>
+       </property>
+       <property name="maxVisibleItems">
+        <number>21</number>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="PropertiesLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Proprieties</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+       </property>
+       <item>
+        <widget class="QPushButton" name="DeSelAll">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>De Select ALL</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="SelAll">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Select ALL</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QListWidget" name="ListProperties">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Plain</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+       </property>
+       <item>
+        <widget class="QPushButton" name="Exit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Exit</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="CompileVars">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Create Varset</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>ObjCombo</tabstop>
+  <tabstop>SelAll</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
