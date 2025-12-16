@@ -58,19 +58,22 @@ if FreeCAD.ActiveDocument.getObject("LVarset"):
 else:
 	msgBox = QtWidgets.QMessageBox()
 	msgBox.setText(''''
-******************************************************************
-***************          LVarsetet 0.1-Beta         ******************
-******************************************************************\n
-Copyright (c) 2025 Luca Corti
+**************************************************************************
+***************          LVarset_0.1_Beta         ****************************
+**************************************************************************
+#                   Copyright (c) 2025 Luca Corti
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License  Version 3
+# This program is free software: you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# Version 3
 # This software uses PySide2 (Qt for Python)
-#released under the LGPL v3 license and developed by The Qt Company.
-#The user can obtain a copy of the library and its source code 
-#by visiting: https://wiki.qt.io/Qt_for_Python 
-#The source code of this software remains the property of the author.''')
-	
+# released under the LGPL v3 license and developed by The
+# Qt Company.
+# This program is a beta version, and is distribuited
+#       WITHOUT ANY WARRANTY.
+# The source code of this software remains
+# the property of the author.''')
+
 
 	msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
 	ret = msgBox.exec_()
