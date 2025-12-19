@@ -1,4 +1,4 @@
-# LVarsetet Copyright (c) 2025 Luca Corti
+# LVarsetet_0_1_Beta Copyright (c) 2025 Luca Corti
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
