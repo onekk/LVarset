@@ -160,9 +160,6 @@ print("creation of Objects ok\n")
 #***********************************************
 #********  CLASS Window1   ********
 #***********************************************
-from pathlib import Path
-from PySide import QtCore, QtGui, QtWidgets, QtUiTools
-
 
 class Window1(QtWidgets.QWidget):
     def __init__(self):
