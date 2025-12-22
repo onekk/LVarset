@@ -11,7 +11,7 @@ the object name goes in the varset group name and the properties of the object g
 
 INSTALLATION:
 
-put the 3 files LVarset\_0\_1\_Beta.py, Lvarset.ui, Lvarset.svg, in the macro folder of your Freecad program eg. "C:\\Users\\"your\_Name"\\AppData\\Roaming\\FreeCAD\\Macro"
+put the 3 files LVarset_0_1_Beta.py, Lvarset.ui, Lvarset.svg, in the macro folder of your Freecad program eg. "C:\\Users\\"your\_Name"\\AppData\\Roaming\\FreeCAD\\Macro"
 
 
 
@@ -19,5 +19,5 @@ use it with the menu MACRO or:
 
 
 
-right click in the toolbar --> customize --> tab MACROS --> Select the LVarset\_0\_1\_Beta.py in the input field Macro: -- write Lvarset in the menu text: field -->  ADD button  --> press the three dot pixmap button -> press the icon folder--> button --> plus button --> select the macro folder (eg. C:\\Users\\"your\_Name"\\AppData\\Roaming\\FreeCAD\\Macro) --> ok button --> choose the Lvarset icon --> click the tool bars tab --> in the right combobox choose the GLOBAL ambient --> new button --> choose a name tor the new toolbar --> ok button --> now in the left combobox choose the macros ambient (macros not macro) --> in the left window choose the Lvarset icon --> click the right arrow --> and finally the close button. The Lvarset icon will appear in the tool bar and you can press it to execute the macro.
+right click in the toolbar --> customize --> tab MACROS --> Select the LVarset_0_1_Beta.py in the input field Macro: -- write Lvarset in the menu text: field -->  ADD button  --> press the three dot pixmap button -> press the icon folder--> button --> plus button --> select the macro folder (eg. C:\\Users\\"your\_Name"\\AppData\\Roaming\\FreeCAD\\Macro) --> ok button --> choose the Lvarset icon --> click the tool bars tab --> in the right combobox choose the GLOBAL ambient --> new button --> choose a name tor the new toolbar --> ok button --> now in the left combobox choose the macros ambient (macros not macro) --> in the left window choose the Lvarset icon --> click the right arrow --> and finally the close button. The Lvarset icon will appear in the tool bar and you can press it to execute the macro.
 
