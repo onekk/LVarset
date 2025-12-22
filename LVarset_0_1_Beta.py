@@ -26,11 +26,14 @@ QFile = QtCore.QFile
 Qt = QtCore.Qt
 from pathlib import Path
 
-
-
-
-
+if FreeCAD.ActiveDocument is None:
+    QtWidgets.QMessageBox.critical(
+        None, "LVarset",
+        "No active document.\nPlease open or create a document first."
+)
+    return
 d=FreeCAD.ActiveDocument
+
 
 NotAllowedObjects = ['ActiveView','AdditiveLoft','AdditivePipe','ArcFitTolerance',
 'DocumentObjectGroup','DrawLeaderLine','DrawPage','DrawRichAnno','DrawSVGTemplate',
@@ -45,15 +48,6 @@ AllowedProperties = [
 'SecondAngle','Size','Size2','TaperAngle','TaperAngleRev','TaperAngle2','TaperedAngle','ThreadDepth',
 'ThreadDiameter','ThreadDirection','Value','Width','x','y','z'
 ]
-
-Unit =['mm','cm','m','in','ft','µm','nm','km','\°','deg','rad','gon','mm²',
-'cm²','m²','in²','ft²','mm³','cm³','m³','in³','ft³']
-
-''','kg','g','mg','lb','oz','kg/m³','g/cm³','lb/in³',
-'N','lbf','Pa','kPa','MPa','bar','psi','J','kJ','MJ','Wh','kWh','W','kW','MW','hp',
-'K','°C','°F','s','min','h','m/s','km/h','mm/s','ft/s','m/s²','mm/s²','ft/s²','N·m','lbf·ft','kgf·cm',
-'kg·m²','kg·mm²'
-]'''
 
 
 #**************************************************
@@ -83,7 +77,7 @@ else:
 
     msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
     ret = msgBox.exec()
-    LVarset=App.activeDocument().addObject('App::VarSet','LVarset') # adds a varset named LVarset
+    LVarset = FreeCAD.ActiveDocument.addObject('App::VarSet', 'LVarset')
 
 #*********************** ************************************************
 #***************     OBJECT DATA EXTRACTION      *******************
@@ -97,8 +91,10 @@ Counter =0
 
 for x in range(NOgg): # cycle through all objects
     XObject=d.Objects[x]
-    if XObject.TypeId.split("::")[1] in NotAllowedObjects:
-        continue # if it is a not allowed object, ignore it
+    type_name = XObject.TypeId.split("::")[-1]
+    if type_name in NotAllowedObjects:
+    continue# if it is a not allowed object, ignore it
+
     for i in range(len(XObject.PropertiesList)): # cycle through all properties of that object
         Property = XObject.PropertiesList[i]
         if  not Property in AllowedProperties: 
@@ -224,7 +220,7 @@ class Window1(QtWidgets.QWidget):
 
 #******************   Fills ComboBox   ++++++++++++++++++++++++++
         for Object in Objects:
-            self.ObjComb.addItem(f"{Object[0][1]}--{Object[1][1]}\n")
+            self.ObjComb.addItem(f"{Object[0][1]}--{Object[1][1]}")
             self.NOgg=0
 #******************   Fill QListWidget   ++++++++++++++++++++++++++
         XObject = Objects[self.NOgg]
@@ -285,7 +281,7 @@ class Window1(QtWidgets.QWidget):
             else:
                 print("******  ERROR   ******\n")
                 pass
-            d.recompute()
+
     a=3
     d.recompute()
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -340,7 +336,6 @@ class Window1(QtWidgets.QWidget):
                         LVarset.addProperty('App::PropertyFloat', PropertyName , GroupName)
                         setattr(LVarset, PropertyName, float(Property[1]))
                         c += 1
-                    d.recompute()
 #************************************************************************************************					
 #*****************                    writes Formula in Object            ***********************
 #************************************************************************************************					
@@ -378,7 +373,7 @@ class Window1(QtWidgets.QWidget):
                 else:
                     #*******    otherwise remember not to delete the entire XObject
                     x =1
-            d.recompute()
+
             if x== 0:
 #******         If there are no more Properties, remove XObject from Objects   ********
                 Objects.remove(XObject)
